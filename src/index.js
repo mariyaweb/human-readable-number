@@ -1,8 +1,7 @@
 module.exports = function toReadable(number) {
-
     const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
-    const prefixTens = ["", "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+    const prefixTens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
     let numberString = number.toString();
 
@@ -15,7 +14,8 @@ module.exports = function toReadable(number) {
     }
 
     if (numberString.length == 2) {
-        return prefixTens[numberString[0]] + " " + ones[numberString[1]];
+        let result = prefixTens[numberString[0]] + " " + ones[numberString[1]];
+        return result.trimEnd();
     }
 
     if (numberString.length == 3) {
