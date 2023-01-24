@@ -25,7 +25,5 @@ module.exports = function toReadable(number) {
             return ones[numberString[0]] + " hundred " + toReadable(+(numberString[1] + numberString[2]));
         }
     }
-
 }
-console.log(toReadable(999));
 
